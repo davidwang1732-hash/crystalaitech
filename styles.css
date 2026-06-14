@@ -601,6 +601,132 @@ h3 {
   background: var(--paper);
 }
 
+.seo-solutions {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+}
+
+.solution-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.solution-card,
+.faq-grid article {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(8, 35, 63, 0.07);
+}
+
+.solution-card span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.solution-card p,
+.faq-grid p {
+  color: var(--muted);
+}
+
+.service-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 40px;
+  align-items: center;
+  padding: clamp(70px, 10vw, 120px) clamp(20px, 5vw, 72px);
+  background: linear-gradient(120deg, #f6f9fc 0%, #ffffff 68%);
+}
+
+.service-page-hero p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.service-page-hero figure {
+  margin: 0;
+}
+
+.service-page-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.service-page-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
+  gap: 32px;
+  padding: clamp(56px, 8vw, 92px) clamp(20px, 5vw, 72px);
+}
+
+.service-page-toc {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 10px;
+  align-self: start;
+  padding: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.service-page-toc a {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.service-page-content {
+  display: grid;
+  gap: 42px;
+}
+
+.service-page-content section {
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-page-content section:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.service-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.service-feature-list li {
+  padding: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.service-feature-list strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--deep-blue);
+}
+
+.service-feature-list p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
 .article-card-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1293,6 +1419,8 @@ h3 {
   .staff-upload-layout,
   .article-hero,
   .article-layout,
+  .service-page-hero,
+  .service-page-layout,
   .article-card-public,
   .article-library-layout,
   .article-list-card {
@@ -1301,6 +1429,8 @@ h3 {
 
   .article-hero,
   .article-layout,
+  .service-page-hero,
+  .service-page-layout,
   .article-card-public,
   .article-library-layout,
   .article-list-stack .article-list-card,
@@ -1309,6 +1439,10 @@ h3 {
   }
 
   .article-toc {
+    position: static;
+  }
+
+  .service-page-toc {
     position: static;
   }
 
@@ -1351,6 +1485,8 @@ h3 {
   .hero-contact,
   .intro,
   .service-grid,
+  .solution-grid,
+  .faq-grid,
   .capability-grid,
   .process-list,
   .article-workspace,
@@ -1360,7 +1496,8 @@ h3 {
   .training-split,
   .pdf-case-card,
   .applications,
-  .contact-section {
+  .contact-section,
+  .service-feature-list {
     grid-template-columns: 1fr;
   }
 

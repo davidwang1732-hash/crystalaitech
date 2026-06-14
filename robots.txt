@@ -3,4 +3,14 @@ Allow: /
 Disallow: /staff-upload.html
 Disallow: /source-*
 
+User-agent: Bingbot
+Allow: /
+Disallow: /staff-upload.html
+Disallow: /source-*
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /staff-upload.html
+Disallow: /source-*
+
 Sitemap: https://www.crystalaitech.com/sitemap.xml
