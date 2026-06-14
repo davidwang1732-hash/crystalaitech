@@ -14,7 +14,7 @@
       event.preventDefault();
       var status = form.querySelector("[data-form-status]");
       if (status) {
-        status.textContent = "需求已在本页记录。静态站点暂不直接上传到服务器，请通过电话或邮件同步URS、招标文件或测试需求文档。";
+        status.textContent = "需求信息已整理。我们将根据您填写的联系方式沟通URS、招标文件或测试需求文档。";
       }
       form.classList.add("is-submitted");
     });
