@@ -72,14 +72,60 @@ textarea {
   top: 0;
   z-index: 50;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 12px clamp(18px, 4vw, 56px);
+  gap: 12px 18px;
+  padding: 8px clamp(18px, 4vw, 56px) 12px;
   color: var(--ink);
   background: rgba(7, 17, 31, 0.86);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
+}
+
+.contact-strip {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px 14px;
+  min-height: 34px;
+  padding-bottom: 8px;
+  color: #cfe0f4;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(159, 181, 207, 0.16);
+}
+
+.contact-strip span:first-child {
+  margin-right: auto;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.contact-strip strong {
+  color: var(--cyan);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.contact-strip a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 12px;
+  color: #dff7ff;
+  font-weight: 800;
+  border: 1px solid rgba(37, 216, 255, 0.32);
+  border-radius: var(--radius);
+  background: rgba(37, 216, 255, 0.08);
+  white-space: nowrap;
+}
+
+.contact-strip a:last-child {
+  color: #06111f;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--cyan), #8ef0ff);
 }
 
 .brand {
@@ -1058,7 +1104,6 @@ h3 {
 @media (max-width: 1120px) {
   .site-header {
     align-items: flex-start;
-    flex-wrap: wrap;
   }
 
   .nav-toggle {
@@ -1130,6 +1175,18 @@ h3 {
     width: 100%;
   }
 
+  .contact-strip {
+    justify-content: flex-start;
+  }
+
+  .contact-strip span {
+    flex: 1 1 100%;
+  }
+
+  .contact-strip a {
+    flex: 1 1 calc(50% - 8px);
+  }
+
   .footer-inner {
     flex-direction: column;
   }
@@ -1142,6 +1199,14 @@ h3 {
 
   .brand {
     min-width: 0;
+  }
+
+  .contact-strip {
+    align-items: stretch;
+  }
+
+  .contact-strip a {
+    width: 100%;
   }
 
   .hero,
