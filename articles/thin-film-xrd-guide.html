@@ -1,0 +1,498 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="劳埃科技技术文章：薄膜 X 射线衍射测试要点，介绍薄膜 XRD 原理、测角轴系、光学件、XRR、HRXRD、RSM 和定制方案选择。"
+    >
+    <meta name="keywords" content="薄膜XRD,高分辨XRD,HRXRD,XRR,RSM,X射线衍射仪定制,高分辨X射线衍射仪">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.crystalaitech.com/articles/thin-film-xrd-guide.html">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="劳埃科技有限公司">
+    <meta property="og:title" content="薄膜 X 射线衍射测试要点 | 高分辨 XRD 与 HRXRD">
+    <meta property="og:description" content="面向薄膜、外延片和涂层样品，说明薄膜 XRD、XRR、HRXRD、RSM 和仪器定制方案选择。">
+    <meta property="og:url" content="https://www.crystalaitech.com/articles/thin-film-xrd-guide.html">
+    <meta property="og:image" content="https://www.crystalaitech.com/assets/case-hrxrd.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>薄膜XRD测试要点 | 高分辨XRD HRXRD | 劳埃科技</title>
+    <link rel="stylesheet" href="../styles.css?v=20260614-hrxrd2">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "薄膜 X 射线衍射测试要点：从样品到方案",
+        "description": "介绍薄膜 XRD、XRR、HRXRD、RSM 和衍射仪定制方案选择。",
+        "image": "https://www.crystalaitech.com/assets/case-hrxrd.png",
+        "datePublished": "2026-06-14",
+        "dateModified": "2026-06-14",
+        "author": {
+          "@type": "Organization",
+          "name": "劳埃科技有限公司"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "劳埃科技有限公司",
+          "url": "https://www.crystalaitech.com/"
+        },
+        "mainEntityOfPage": "https://www.crystalaitech.com/articles/thin-film-xrd-guide.html"
+      }
+    </script>
+  </head>
+  <body class="article-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="返回劳埃科技有限公司首页">
+        <span class="brand-mark">L</span>
+        <span>
+          <strong>劳埃科技有限公司</strong>
+          <small>技术文章</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="文章导航">
+        <a href="../index.html#services">主营业务</a>
+        <a href="index.html">技术文章</a>
+        <a href="#methods">测试方法</a>
+        <a href="#instrument-config">仪器配置</a>
+        <a href="#typical-cases">案例整理</a>
+        <a href="../index.html#contact">联系方式</a>
+      </nav>
+      <a class="header-phone" href="tel:18284839704">182 8483 9704</a>
+    </header>
+
+    <main>
+      <article class="article-document">
+        <section class="article-hero" aria-labelledby="article-title">
+          <div class="article-hero-copy">
+            <a class="back-link" href="index.html">返回技术文章</a>
+            <p class="eyebrow">Thin Film XRD Guide</p>
+            <h1 id="article-title">薄膜 X 射线衍射测试要点：从样品到方案</h1>
+            <p class="article-lead">
+              薄膜 XRD 的难点不在公式，而在样品本身。膜层薄，基底强，取向和应变又会一起影响峰位、峰宽和强度。测试前把目的讲清楚，后面的光路、扫描方式和仪器配置才有依据。
+            </p>
+            <div class="article-meta">
+              <span>劳埃科技技术文章</span>
+              <span>发布：2026-06-14</span>
+              <span>适用：薄膜、外延、涂层、半导体材料</span>
+            </div>
+          </div>
+          <figure class="article-hero-figure">
+            <img src="../assets/case-hrxrd.png" alt="薄膜高分辨 X 射线衍射测试平台示意图" width="1792" height="1024">
+            <figcaption>薄膜 XRD 方案通常要同时考虑基底信号、角分辨率、入射角和样品姿态。</figcaption>
+          </figure>
+        </section>
+
+        <div class="article-layout">
+          <aside class="article-toc" aria-label="文章目录">
+            <strong>目录</strong>
+            <a href="#why-thin-film">薄膜为什么难测</a>
+            <a href="#principle">核心原理</a>
+            <a href="#methods">常见测试方法</a>
+            <a href="#instrument-config">仪器配置</a>
+            <a href="#typical-cases">典型场景</a>
+            <a href="#alignment">对准与参数</a>
+            <a href="#reading-data">数据解读</a>
+            <a href="#laue">定制方案</a>
+          </aside>
+
+          <div class="article-content">
+            <section id="why-thin-film">
+              <h2>一、薄膜样品先看三个问题</h2>
+              <p>
+                薄膜样品和粉末样品不一样。粉末一般假定晶粒随机取向，薄膜则有基底、有厚度方向、有生长过程留下的取向和应力。膜层只有几十纳米到几微米时，基底峰、背景和仪器光斑都会明显影响结果。
+              </p>
+              <p>
+                做测试前建议先确认三件事：第一，样品要回答的是物相、取向、应变还是外延质量；第二，膜层信号是否可能被基底淹没；第三，是否需要面内信息。目的不同，扫描方式就不同。
+              </p>
+              <div class="article-note">
+                <strong>现场判断</strong>
+                <p>看物相和厚度方向取向，先做 2θ/ω 扫描；膜层薄、基底强，优先考虑掠入射；要看外延质量和面内关系，再做摇摆曲线、极图或 φ 扫描。</p>
+              </div>
+            </section>
+
+            <section id="principle">
+              <h2>二、核心原理看三项：峰位、峰强、峰宽</h2>
+              <p>
+                X 射线进入晶体后，会在周期排列的晶面上发生散射。相邻晶面的散射波满足相干增强条件时，探测器记录到衍射峰。常用的布拉格关系式为：
+              </p>
+              <p class="formula">nλ = 2d sinθ</p>
+              <p>
+                λ 是 X 射线波长，d 是晶面间距，θ 是布拉格角。实际看谱图时，峰位对应晶面间距和晶格变化；峰强受物相含量、取向和吸收影响；峰宽包含晶粒尺寸、微应变、仪器展宽和样品弯曲等因素。
+              </p>
+              <figure class="article-figure">
+                <img src="../assets/principle-xrd-web.svg" alt="布拉格衍射原理图：入射 X 射线在晶面上发生相干衍射" width="557" height="287">
+                <figcaption>布拉格衍射原理图。来源：<a href="https://commons.wikimedia.org/wiki/File:Bragg_XRD.svg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></figcaption>
+              </figure>
+              <p>
+                对薄膜样品，还要注意衍射矢量方向。常规对称扫描主要测到与样品表面平行的晶面，适合看厚度方向信息。它不能单独说明面内外延关系，面内关系通常要靠倾角和方位角扫描来确认。
+              </p>
+              <figure class="article-figure">
+                <img src="../assets/principle-hrxrd-user.png" alt="高分辨 X 射线衍射中散射矢量、晶格常数、尺寸和晶体取向影响的示意图" width="989" height="545">
+                <figcaption>高分辨 XRD 关注峰位、峰宽和散射矢量分布，常用于外延质量、应变和取向展宽分析。</figcaption>
+              </figure>
+            </section>
+
+            <section id="methods">
+              <h2>三、常见测试方式和适用场景</h2>
+              <div class="method-grid">
+                <section>
+                  <h3>2θ/ω 或 θ-2θ 扫描</h3>
+                  <p>样品和探测器联动，适合做第一条谱。主要看物相、厚度方向取向和基底附近的外延峰。</p>
+                  <p>这类扫描只看满足当前几何条件的晶面。薄膜只有一个峰，不等于一定是单一外延取向。</p>
+                </section>
+                <section>
+                  <h3>掠入射 XRD（GIXRD）</h3>
+                  <p>入射角固定在小角度，探测器扫描 2θ。X 射线穿透深度降低后，膜层信号相对增强。</p>
+                  <p>适合薄膜、涂层和基底背景强的样品。高度取向样品可能因几何条件不满足而漏掉某些峰。</p>
+                </section>
+                <section>
+                  <h3>摇摆曲线（Rocking Curve）</h3>
+                  <p>探测器停在目标衍射峰附近，只扫描样品入射角 ω。它常用来比较外延取向一致性。</p>
+                  <p>做工艺对比时，可把曲线归一化，以 Δω 为横轴比较 FWHM。峰越窄，取向分布通常越集中。</p>
+                </section>
+                <section>
+                  <h3>极图（Pole Figure）</h3>
+                  <p>固定某个衍射条件，改变样品倾角 ψ 和方位角 φ，记录一组晶面在空间中的分布。</p>
+                  <p>用于判断织构、面内取向和外延变体。样品倾斜会带来光斑变大和离焦问题，平行光更合适。</p>
+                </section>
+                <section>
+                  <h3>φ 扫描</h3>
+                  <p>选定倾角和衍射峰后旋转样品方位角，观察面内对称性。四重、六重或多畴外延会有不同峰数和间隔。</p>
+                  <p>φ 扫描比完整极图快，适合确认外延关系和批量比较。前提是峰位和倾角选得准。</p>
+                </section>
+                <section>
+                  <h3>倒易空间图（RSM）</h3>
+                  <p>围绕某个衍射峰做二维扫描，同时观察面外和面内晶格信息。常用于分析应变松弛和组分变化。</p>
+                  <p>RSM 对角度稳定性、单色化光路和样品对准要求高，是高分辨 XRD 的核心能力之一。</p>
+                </section>
+              </div>
+            </section>
+
+            <section id="instrument-config">
+              <h2>四、仪器配置如何影响测试结果</h2>
+              <p>
+                薄膜 XRD 不是只换一个探测器或多加一条扫描轴。真正影响结果的是整套系统：测角仪能不能把目标倒易点转到可测区域，光路分辨率够不够，样品是否能稳定对准，探测器和狭缝是否适合当前测试。把这些问题理清楚，定制方案才有方向。
+              </p>
+
+              <div class="training-card-grid">
+                <article class="training-card">
+                  <div>
+                    <span>01 / 轴系与样品台</span>
+                    <h3>先确认样品需要哪些自由度</h3>
+                    <p>
+                      常规 2θ/ω 扫描只需要基础测角轴；极图、φ 扫描、面内衍射和 RSM 往往需要更多样品姿态控制。θ、2θ、ω、χ、φ 以及 X/Y/Z 平移轴的组合，决定了系统能覆盖哪些测试动作。
+                    </p>
+                  </div>
+                  <div class="training-figure-pair">
+                    <figure>
+                      <img src="../assets/training/training-page-02.png" alt="技术示意图：水平样品安装 X 射线衍射仪测角轴" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：测角仪轴系与 2θ 几何。</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../assets/training/training-page-04.png" alt="技术示意图：水平样品台的旋转、摆动和平移轴" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：样品台平移、旋转与摆动轴。</figcaption>
+                    </figure>
+                  </div>
+                </article>
+
+                <article class="training-card">
+                  <div>
+                    <span>02 / 光路与分辨率</span>
+                    <h3>光学件决定强度、角分辨率和可测模式</h3>
+                    <p>
+                      多层膜反射镜、沟道切割晶体、狭缝、索勒狭缝和分析晶体对应不同任务。普通薄膜需要通量和稳定性，高分辨外延测量则更看重单色化和角分辨率。最终分辨率由入射光路、接收光路、测角仪步进和照射体积共同决定。
+                    </p>
+                  </div>
+                  <div class="training-figure-pair">
+                    <figure>
+                      <img src="../assets/training/training-page-06.png" alt="技术示意图：薄膜分析用光学器件类型" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：薄膜 XRD 常用光学器件。</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../assets/training/training-page-53.png" alt="技术示意图：Ge 沟道切割晶体单色器与准直光路" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：沟道切割晶体与高分辨光路。</figcaption>
+                    </figure>
+                  </div>
+                </article>
+
+                <article class="training-card">
+                  <div>
+                    <span>03 / 倒易空间</span>
+                    <h3>测量动作对应倒易空间中的点和分布</h3>
+                    <p>
+                      薄膜衍射不是只看一条角度曲线。2θ/ω、固定入射角扫描、面内扫描、极图、摇摆曲线和 RSM，本质上是在不同方向上观察倒易点位置、展宽和强度分布。所以同一个样品，常常需要多种扫描互相印证。
+                    </p>
+                  </div>
+                  <div class="training-figure-pair">
+                    <figure>
+                      <img src="../assets/training/training-page-10.png" alt="技术示意图：倒易晶格与布拉格衍射条件" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：晶面表达、倒易矢量和衍射条件。</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../assets/training/training-page-11.png" alt="技术示意图：散射矢量与衍射条件展宽" width="1728" height="972" loading="lazy">
+                      <figcaption>图示：晶格常数、尺寸和取向对衍射条件的影响。</figcaption>
+                    </figure>
+                  </div>
+                </article>
+              </div>
+
+              <h3>测量方法和获得信息的对应关系</h3>
+              <p>
+                不同测量方式对应不同信息：出平面测量看平行于样品表面的晶面；掠入射更关注近表面和薄膜弱信号；面内测量看接近平行于表面的晶面；极图和 RSM 用于取向、织构、外延和三维倒易空间分析。
+              </p>
+              <div class="training-method-gallery">
+                <figure>
+                  <img src="../assets/training/training-page-24.png" alt="技术示意图：各种薄膜 XRD 测量技术与获得信息对应表一" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：出平面、薄膜、面内、极图等测量方式对比。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-25.png" alt="技术示意图：摇摆曲线和 RSM 测量获得信息对应表" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：摇摆曲线与 RSM 能获得的信息。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-26.png" alt="技术示意图：出平面测量和薄膜掠入射测量几何" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：出平面测量与固定入射角薄膜测量。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-27.png" alt="技术示意图：面内测量几何" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：面内测量几何。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-28.png" alt="技术示意图：极图测量程序" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：极图测量时的 α、β 扫描程序。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-31.png" alt="技术示意图：RSM 倒易空间图测量示意" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：RSM 测量和倒易点分布。</figcaption>
+                </figure>
+              </div>
+
+              <div class="training-split">
+                <div>
+                  <h3>XRR 反射率：补充厚度、密度和粗糙度信息</h3>
+                  <p>
+                    薄膜 XRD 主要回答晶相、取向、应变和结晶质量。XRR 反射率补上了另一类信息：膜厚、密度、表面粗糙度和界面宽度。它适用于晶态或非晶薄膜，尤其适合几纳米到数千纳米范围内的单层和多层膜。
+                  </p>
+                  <p>
+                    XRR 对低角度和样品表面平行度很敏感，因此对准流程很关键：先做直通光半强度调整，再在全反射范围做精细半强度调整，随后设置扫描范围、步宽、速度和自动衰减。
+                  </p>
+                </div>
+                <figure>
+                  <img src="../assets/training/training-page-37.png" alt="技术示意图：Au、Cu、SiO2 薄膜和粗糙度对 XRR 曲线的影响" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：XRR 曲线中厚度、密度和粗糙度信息。</figcaption>
+                </figure>
+              </div>
+              <div class="training-method-gallery compact">
+                <figure>
+                  <img src="../assets/training/training-page-39.png" alt="技术示意图：XRR 反射率测量流程" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：XRR 从样品信息、光路选择到测量的流程。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-42.png" alt="技术示意图：XRR 样品 Z 轴半强度对准" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：直通光半强度调整中的 Z 轴扫描。</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/training/training-page-49.png" alt="技术示意图：XRR 反射率测量条件" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：反射率测量条件示例。</figcaption>
+                </figure>
+              </div>
+
+              <div class="training-split">
+                <div>
+                  <h3>HRXRD：为很小的晶格差异配置高分辨光路</h3>
+                  <p>
+                    以 AlGaAs/GaAs 这类外延体系为例，高分辨 XRD 常常要区分 10<sup>-3</sup> 量级甚至更小的晶格常数差异。此时普通通量并不是唯一目标，入射单色性、准直性、测角仪精度和分析晶体配置都会变成关键参数。
+                  </p>
+                  <p>
+                    对外延片、超晶格、多层膜和应变薄膜，系统通常需要精密测角仪、Ge 沟道切割晶体、可切换光路和稳定的软件扫描流程。仪器定制时应提前确认目标材料体系、目标反射和所需角分辨率。
+                  </p>
+                </div>
+                <figure>
+                  <img src="../assets/training/training-page-51.png" alt="技术示意图：高分辨 X 射线衍射仪配置示意" width="1728" height="972" loading="lazy">
+                  <figcaption>图示：高分辨 X 射线衍射仪光路配置。</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section id="typical-cases">
+              <h2>五、典型场景与测试判断</h2>
+              <p>
+                客户咨询薄膜 XRD 时，常见问题并不是“能不能测”，而是“该怎么测才有意义”。下面把常见样品问题整理成六个场景，用于判断应选择哪类扫描、需要什么光路，以及报告中要注意哪些信息。
+              </p>
+
+              <div class="pdf-case-grid">
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/case-xrd.png" alt="薄膜 XRD 物相与取向测试平台案例示意图" width="1792" height="1024">
+                    <figcaption>示意图：薄膜物相、结晶度和择优取向测试。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 1：同一材料，不同薄膜结构会给出不同谱图</h3>
+                    <p>
+                      外延薄膜、织构薄膜、随机多晶薄膜和非晶薄膜，在 2θ/ω 图谱上的表现差别很大。工程上要同时看峰数、相对强度和背景形态，因为它们会受到物相、取向和结晶度共同影响。只出现少数峰，不能直接等同于“相很纯”。
+                    </p>
+                    <p>
+                      对强择优取向薄膜，常规扫描可能只看到与表面平行的晶面。要确认是否有面内外延，还需要极图或 φ 扫描补充。
+                    </p>
+                  </div>
+                </article>
+
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/case-xray-2d.png" alt="薄膜和涂层样品掠入射衍射案例示意图" width="1792" height="1024">
+                    <figcaption>示意图：薄膜和涂层样品的弱信号增强测试。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 2：膜层信号弱时，先考虑掠入射</h3>
+                    <p>
+                      薄膜厚度通常远小于 X 射线穿透深度，基底信号容易占主导。把入射角固定在约 0.5°-1°，可以降低穿透深度，提高膜层信号比例。
+                    </p>
+                    <p>
+                      这类测量适合随机多晶薄膜、涂层和基底背景强的样品。若样品高度外延，掠入射下某些峰可能不出现，需要结合常规扫描判断。
+                    </p>
+                  </div>
+                </article>
+
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/principle-hrxrd-user.png" alt="高分辨 XRD 摇摆曲线和衍射峰展宽案例示意图" width="989" height="545">
+                    <figcaption>示意图：外延薄膜的峰形、散射矢量和取向展宽。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 3：外延质量比较，摇摆曲线比单条谱更直接</h3>
+                    <p>
+                      摇摆曲线可以反映晶面倾角分布。探测器固定在某个衍射峰附近，扫描 ω，得到的峰宽常用于比较外延层取向一致性。
+                    </p>
+                    <p>
+                      做工艺优化时，可以把不同样品的摇摆曲线归一化后比较 FWHM。这个宽度和 2θ/ω 峰宽不是同一个概念，前者更偏向取向分布和外延质量。
+                    </p>
+                  </div>
+                </article>
+
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/principle-xray-2d-web.svg" alt="晶面空间分布和方位角扫描案例示意图" width="1052" height="744">
+                    <figcaption>示意图：二维衍射与方位角信息可用于判断取向分布。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 4：面内取向不能只靠 2θ/ω 判断</h3>
+                    <p>
+                      以立方晶系薄膜为例，若薄膜为 (001) 面外取向，测 (111) 极点时，峰会出现在特定 ψ 角附近；单一面内取向会出现规则分布的峰，纤维织构则更接近环状分布。
+                    </p>
+                    <p>
+                      φ 扫描可作为较快的确认方式。峰的数量、间隔和强弱，可用于判断晶体对称性、面内取向和多畴情况。
+                    </p>
+                  </div>
+                </article>
+
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/case-hrxrd.png" alt="薄膜样品对准和高分辨 XRD 测试案例示意图" width="1792" height="1024">
+                    <figcaption>示意图：薄膜样品对准和高分辨 XRD 测试。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 5：对准不稳定，后面的峰位和峰强都会受影响</h3>
+                    <p>
+                      薄膜样品如果没有放在仪器中心，峰位会发生系统偏移；如果表面倾角不对，薄膜峰强会下降。高分辨测试尤其依赖稳定的样品高度和角度对准。
+                    </p>
+                    <p>
+                      单晶基底薄膜通常先用基底峰对准，因为基底峰强、窄、位置明确。再测薄膜峰时，重复性会更好。
+                    </p>
+                  </div>
+                </article>
+
+                <article class="pdf-case-card">
+                  <figure>
+                    <img src="../assets/principle-xrd-web.svg" alt="薄膜峰宽、晶粒尺寸和微应变分析案例示意图" width="557" height="287">
+                    <figcaption>示意图：峰宽分析需要区分晶粒尺寸、微应变和仪器展宽。</figcaption>
+                  </figure>
+                  <div>
+                    <h3>场景 6：峰宽变大，不一定只代表晶粒变小</h3>
+                    <p>
+                      峰宽可能由晶粒尺寸主导，也可能由微应变主导，很多薄膜样品会同时包含两类贡献。若要进一步区分来源，可以结合多峰拟合、仪器展宽扣除和 Williamson-Hall 等分析思路。
+                    </p>
+                    <p>
+                      如果要从峰宽推断晶粒尺寸或应变，需要先考虑仪器展宽、Kα 双线、膜厚有限、缺陷和样品弯曲等因素。
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section id="alignment">
+              <h2>六、对准和参数比想象中重要</h2>
+              <p>
+                薄膜 XRD 对样品高度、倾角和基底峰位置很敏感。样品表面偏离仪器中心，峰位会偏；样品倾斜没有调好，峰强会明显下降，薄膜峰甚至会被错过。
+              </p>
+              <p>
+                单晶基底薄膜通常先找基底峰。基底峰强、窄、位置明确，适合用来校正样品姿态。调好 ω、ψ 等轴后，再测薄膜峰，数据更稳。
+              </p>
+              <p>
+                光学件也要按任务选。聚焦光路通量高，适合找弱峰；平行光适合低角度、倾斜样品、摇摆曲线、极图和残余应力测量；单色器和分析晶体能提高角分辨率，但会降低强度。系统配置要在强度、分辨率和测试时间之间取平衡。
+              </p>
+              <div class="checklist-panel">
+                <h3>上机前建议确认</h3>
+                <ul>
+                  <li>扫描范围是否覆盖薄膜和基底的关键反射。</li>
+                  <li>步长是否足够描述峰形，峰半高宽范围内最好有足够数据点。</li>
+                  <li>计数时间是否让最弱特征达到可判断的信噪比。</li>
+                  <li>直射光或强基底峰是否需要衰减片保护探测器。</li>
+                  <li>入射光斑是否大于样品尺寸，尤其在低角度和样品倾斜时。</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="reading-data">
+              <h2>七、数据判读要留余量</h2>
+              <p>
+                薄膜衍射峰不能只看一个指标。峰位偏移可能来自应变、成分变化、样品高度误差或仪器校准；峰宽变大可能来自晶粒尺寸、微应变、缺陷、膜厚有限、样品弯曲或光学展宽。
+              </p>
+              <p>
+                和粉末卡片对比时，峰位接近只是第一步。薄膜有择优取向时，相对强度会明显偏离粉末标准图谱。遇到异常峰，也要先排查基底多重散射、Kα 双线、Kβ 残留、杂散峰和应变导致的结构变化。
+              </p>
+              <p>
+                测试报告建议保留 X 射线波长、光学件、扫描几何、狭缝设置、探测器类型、扫描范围、步长、计数时间、样品对准方法和数据处理方式。薄膜 XRD 要复现，靠的就是这些参数。
+              </p>
+            </section>
+
+            <section id="laue">
+              <h2>八、把测试方法落到仪器配置</h2>
+              <p>
+                薄膜 XRD 系统不是简单堆硬件。样品尺寸、膜厚、基底类型、目标峰强、角分辨率、自动化程度和后续分析流程，都会影响配置。常规物相、掠入射、高分辨、极图、RSM 和二维探测，对光路、测角机构和探测器的要求并不一样。
+              </p>
+              <figure class="article-figure">
+                <img src="../assets/case-xrd.png" alt="粉末和薄膜兼容 XRD 平台示意图" width="1792" height="1024">
+                <figcaption>系统配置要跟测试问题对应：常规物相、掠入射、摇摆曲线、极图、二维探测或高分辨倒易空间图。</figcaption>
+              </figure>
+              <p>
+                劳埃科技可提供 X 射线衍射仪、高分辨 X 射线衍射仪、X 射线 2D 系统和 3 维电子衍射仪定制。沟通方案时，建议准备样品类型、基底材料、期望测试项目、场地条件和预算范围，便于快速确定配置边界。
+              </p>
+              <div class="article-cta">
+                <div>
+                  <strong>咨询薄膜 XRD 定制方案</strong>
+                  <p>联系人：冯工　电话：18284839704</p>
+                </div>
+                <a class="button primary" href="tel:18284839704">电话咨询</a>
+              </div>
+            </section>
+
+            <section class="article-reference" aria-labelledby="reference-title">
+              <h2 id="reference-title">参考与延伸阅读</h2>
+              <p>
+                本文根据薄膜 XRD 基础资料和仪器配置经验整理，重点放在测试方法选择和工程实现。延伸阅读：George F. Harrington, José Santiso, “Back-to-Basics tutorial: X-ray diffraction of thin films”, Journal of Electroceramics, 2021, <a href="https://doi.org/10.1007/s10832-021-00263-6" target="_blank" rel="noopener">DOI: 10.1007/s10832-021-00263-6</a>。
+              </p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>劳埃科技有限公司</span>
+      <span>专注衍射仪器定制与科研装备集成</span>
+    </footer>
+  </body>
+</html>
+
