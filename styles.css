@@ -601,18 +601,12 @@ h3 {
   background: var(--paper);
 }
 
-.seo-solutions {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
-}
-
-.solution-grid,
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.solution-card,
 .faq-grid article {
   padding: 26px;
   background: var(--white);
@@ -621,15 +615,6 @@ h3 {
   box-shadow: 0 12px 34px rgba(8, 35, 63, 0.07);
 }
 
-.solution-card span {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.solution-card p,
 .faq-grid p {
   color: var(--muted);
 }
@@ -1485,7 +1470,6 @@ h3 {
   .hero-contact,
   .intro,
   .service-grid,
-  .solution-grid,
   .faq-grid,
   .capability-grid,
   .process-list,
